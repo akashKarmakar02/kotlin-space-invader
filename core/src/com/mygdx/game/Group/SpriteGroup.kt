@@ -3,14 +3,14 @@ package com.mygdx.game.Group
 import com.badlogic.gdx.graphics.g2d.SpriteBatch
 
 class SpriteGroup<E: MySprite> {
-    private val spriteGroup = ArrayList<E>()
+    val sprites = ArrayList<E>()
 
     fun add(bullets: E) {
-        spriteGroup.add(bullets)
+        sprites.add(bullets)
     }
 
     fun update() {
-        val iterator = spriteGroup.iterator()
+        val iterator = sprites.iterator()
         while (iterator.hasNext()) {
             val bullet = iterator.next()
             bullet.update {
@@ -20,7 +20,7 @@ class SpriteGroup<E: MySprite> {
     }
 
     fun render(batch: SpriteBatch) {
-        for (sprite in spriteGroup) {
+        for (sprite in sprites) {
             sprite.render(batch)
         }
     }
