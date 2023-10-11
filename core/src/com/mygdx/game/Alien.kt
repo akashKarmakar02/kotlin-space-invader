@@ -10,7 +10,7 @@ import kotlin.random.Random
 class Alien(x: Float, y: Float): MySprite {
 
     private val texture = Texture("img/alien${Random.nextInt(1, 6)}.png")
-    private val sprite = Sprite(texture)
+    val sprite = Sprite(texture)
     private var moveDirection = 1
     private var moveCount = 0
 
